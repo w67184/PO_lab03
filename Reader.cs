@@ -14,17 +14,15 @@ class Reader:Person
     }
     public void ViewBooks()
     {
-        Console.WriteLine($"{FirstName} {LastName} przeczytal ksiazki");
+        Console.WriteLine($"{firstname} {lastname} przeczytal ksiazki");
         foreach (var book in ReadBooks)
         {
-            Console.WriteLine($"- {book.Title} (Autor: {book.Author.FirstName} {book.Author.LastName})");
+            Console.WriteLine($"- {book.Title} (Autor: {book.Author.firstname} {book.Author.lastname})\n");
         }
     }
-    public void View()
+    public override void View()
     {
         base.View();
-
-        Console.WriteLine($"{FirstName} {LastName} przeczytal następujące książki:");
         ViewBooks();
     }
 

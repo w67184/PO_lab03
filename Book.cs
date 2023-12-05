@@ -6,9 +6,27 @@ using System.Threading.Tasks;
 
 class Book
 {
-    public string Title { get; set; }
-    public Person Author { get; set; }
-    public int ReleaseDate { get; set; }
+    protected string title { get; set; }
+    protected Person author { get; set; }
+    protected int releaseDate { get; set; }
+
+    public string Title
+    {
+        get { return title; }
+        set { title = value; }
+    }
+
+    public Person Author
+    {
+        get { return author; }
+        set { author = value; }
+    }
+
+    public int ReleaseDate
+    {
+        get { return releaseDate; }
+        set { releaseDate = value; }
+    }
 
     public Book(string Title, Person Author, int ReleaseDate)
     {
@@ -21,6 +39,6 @@ class Book
         Console.WriteLine($"Tytul: {Title}");
         Console.WriteLine($"Autor: ");
         Author.View();
-        Console.WriteLine($"Data wydania: {ReleaseDate}");
+        Console.WriteLine($"Data wydania: {ReleaseDate}\n");
     }
 }

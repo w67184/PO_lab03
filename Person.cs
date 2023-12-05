@@ -6,10 +6,25 @@ using System.Threading.Tasks;
 
 class Person
 {
-    public string FirstName { get; set; }
-    public string LastName { get; set; }
-    public int Age { get; set; }
+    private string FirstName { get; set; }
+    private string LastName { get; set; }
+    private int Age { get; set; }
 
+    public string firstname
+    {
+        get { return FirstName; }
+        set { FirstName = value; }
+    }
+    public string lastname
+    {
+        get { return LastName; }
+        set { LastName = value; }
+    }
+    public int age
+    {
+        get { return Age; }
+        set { Age = value; }
+    }
     public Person(string firstName, string lastName, int age)
     {
         this.FirstName = firstName;
@@ -17,10 +32,10 @@ class Person
         this.Age = age;
     }
 
-    public void View()
+    public virtual void View()
     {
         Console.WriteLine($"Imie: {FirstName}");
         Console.WriteLine($"Nazwisko: {LastName}");
-        Console.WriteLine($"Wiek: {Age}");
+        Console.WriteLine($"Wiek: {Age}\n");
     }
 }
